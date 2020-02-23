@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputRangeSlider from '../../components/InputRangeSlider';
 import './style.css';
 
 function Home(props) {
@@ -21,10 +22,39 @@ function Home(props) {
         backgroundColor: `${wrapperColor}`
     }
 
+    const handleChange = (type, event) => {
+        switch (type) {
+            case 'horizontal':
+                let state;
+                let value = event.target.value;
+                if (value <= -200) {
+                    state = -200;
+                } else if (value >= 200) {
+                    state = 200;
+                } else {
+                    state = value;
+                }
+                setHorizontal(state);
+                break;
+            default:
+                return false;
+        }
+    };
+
     return (
         <section className="section">
             <div className="sidenav">
                 <div className="form">
+                    <div className="form-item">
+                        <label>Horizontal Length</label>
+                        <InputRangeSlider
+                            min={-200}
+                            max={200}
+                            step={1}
+                            value={horizontal}
+                            onChange={(event) => handleChange("horizontal", event)}
+                        />
+                    </div>
                 </div>
             </div>
             <div className="wrapper" style={wrapperStyle}>
