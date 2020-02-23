@@ -22,7 +22,6 @@
     flex: 1;
     height: 100vh;
     position: relative;
-    background-color: #eee;
 }
 /* 
 * Center
@@ -38,9 +37,20 @@
 /* 
 * Element
 */
-.element {
-    width: 50%;
+.box {
+    width: 36%;
     margin: 0 auto;
-    padding: 30% 0 0;
-    background-color: #fff;
+    padding: 24% 0 0;
+    position: relative;
+}
+.box .box-output {
+    padding: 0 10%;
+}
+.box .box-output b {
+    display: block;
+    margin: 0 0 15px;
+}
+.box .box-output p {
+    line-height: 1.71;
+    font-family: monospace;
 }
