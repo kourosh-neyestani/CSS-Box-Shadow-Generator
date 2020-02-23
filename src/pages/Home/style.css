@@ -1,0 +1,46 @@
+/* 
+* Section
+*/
+.section {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+/* 
+* Sidenav
+*/
+.section > .sidenav {  
+    flex: .3;
+    height: 100vh;
+    position: relative;
+    background-color: darkslateblue;
+}
+/* 
+* Wrapper
+*/
+.section > .wrapper {
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    background-color: #eee;
+}
+/* 
+* Center
+*/
+.center {
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/* 
+* Element
+*/
+.element {
+    width: 50%;
+    margin: 0 auto;
+    padding: 30% 0 0;
+    background-color: #fff;
+}
