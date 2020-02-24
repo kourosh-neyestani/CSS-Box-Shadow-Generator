@@ -3,25 +3,28 @@ import './style.css';
 
 function InputRangeSlider(props) {
 
-    const {min, max, step, value, onChange} = props;
+    const { min, max, step, value, label, onChange } = props;
 
     return (
-        <div className='input-range-slider'>
-            <input
-                min={min}
-                max={max}
-                step={step}
-                type="range"
-                value={value}
-                onChange={onChange}
-            />
-            <div className="value">
+        <div>
+            <label>{label}</label>
+            <div className='input-range-slider'>
                 <input
-                    type="number"
+                    min={min}
+                    max={max}
+                    step={step}
+                    type="range"
                     value={value}
                     onChange={onChange}
                 />
-                <span>px</span>
+                <div className="value">
+                    <input
+                        type="number"
+                        value={value}
+                        onChange={onChange}
+                    />
+                    <span>px</span>
+                </div>
             </div>
         </div>
     );

@@ -46,11 +46,11 @@ function Home(props) {
             <div className="sidenav">
                 <div className="form">
                     <div className="form-item">
-                        <label>Horizontal Length</label>
                         <InputRangeSlider
                             min={-200}
                             max={200}
                             step={1}
+                            label="Horizontal Length"
                             value={horizontal}
                             onChange={(event) => handleChange("horizontal", event)}
                         />
