@@ -25,16 +25,48 @@ function Home(props) {
     const handleChange = (type, event) => {
         switch (type) {
             case 'horizontal':
-                let state;
-                let value = event.target.value;
-                if (value <= -200) {
-                    state = -200;
-                } else if (value >= 200) {
-                    state = 200;
+                let stateHorizontal;
+                if (event.target.value <= -200) {
+                    stateHorizontal = -200;
+                } else if (event.target.value >= 200) {
+                    stateHorizontal = 200;
                 } else {
-                    state = value;
+                    stateHorizontal = event.target.value;
                 }
-                setHorizontal(state);
+                setHorizontal(stateHorizontal);
+                break;
+            case 'vertical':
+                let stateVertical;
+                if (event.target.value <= -200) {
+                    stateVertical = -200;
+                } else if (event.target.value >= 200) {
+                    stateVertical = 200;
+                } else {
+                    stateVertical = event.target.value;
+                }
+                setVertical(stateVertical);
+                break;
+            case 'blur':
+                let stateBlur;
+                if (event.target.value <= -200) {
+                    stateBlur = -200;
+                } else if (event.target.value >= 200) {
+                    stateBlur = 200;
+                } else {
+                    stateBlur = event.target.value;
+                }
+                setBlur(stateBlur);
+                break;
+            case 'size':
+                let stateSize;
+                if (event.target.value <= -200) {
+                    stateSize = -200;
+                } else if (event.target.value >= 200) {
+                    stateSize = 200;
+                } else {
+                    stateSize = event.target.value;
+                }
+                setSize(stateSize);
                 break;
             default:
                 return false;
@@ -53,6 +85,36 @@ function Home(props) {
                             label="Horizontal Length"
                             value={horizontal}
                             onChange={(event) => handleChange("horizontal", event)}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <InputRangeSlider
+                            min={-200}
+                            max={200}
+                            step={1}
+                            label="Vertical Length"
+                            value={vertical}
+                            onChange={(event) => handleChange("vertical", event)}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <InputRangeSlider
+                            min={-200}
+                            max={200}
+                            step={1}
+                            label="Blur Radius"
+                            value={blur}
+                            onChange={(event) => handleChange("blur", event)}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <InputRangeSlider
+                            min={-200}
+                            max={200}
+                            step={1}
+                            label="Spread Radius"
+                            value={size}
+                            onChange={(event) => handleChange("size", event)}
                         />
                     </div>
                 </div>
