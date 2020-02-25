@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputSetColor from '../../components/InputSetColor';
 import InputRangeSlider from '../../components/InputRangeSlider';
 import './style.css';
 
@@ -48,10 +49,10 @@ function Home(props) {
                 break;
             case 'blur':
                 let stateBlur;
-                if (event.target.value <= -200) {
-                    stateBlur = -200;
-                } else if (event.target.value >= 200) {
-                    stateBlur = 200;
+                if (event.target.value <= 0) {
+                    stateBlur = 0;
+                } else if (event.target.value >= 300) {
+                    stateBlur = 300;
                 } else {
                     stateBlur = event.target.value;
                 }
@@ -72,6 +73,10 @@ function Home(props) {
                 return false;
         }
     };
+
+    const handleClick = (event) => {
+        setShadowColor(event.hex);
+    }
 
     return (
         <section className="section">
@@ -116,6 +121,14 @@ function Home(props) {
                             value={size}
                             onChange={(event) => handleChange("size", event)}
                         />
+                    </div>
+                    <div className="form-item">
+                        <InputSetColor 
+                            label="Shadow Color"
+                            value={shadowColor}
+                            onClick={(event) => handleClick(event)}
+                        />
+                       
                     </div>
                 </div>
             </div>
