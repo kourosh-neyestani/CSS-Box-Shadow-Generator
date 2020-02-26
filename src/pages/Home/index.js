@@ -74,8 +74,20 @@ function Home(props) {
         }
     };
 
-    const handleClick = (event) => {
-        setShadowColor(event.hex);
+    const handleClick = (event, type) => {
+        switch (type) {
+            case "box":
+                setBoxColor(event.hex);
+                break;
+            case "shadow":
+                setShadowColor(event.hex);
+                break;
+            case "wrapper":
+                setWrapperColor(event.hex);
+                break;
+            default:
+                return false;
+        }
     }
 
     return (
@@ -123,12 +135,25 @@ function Home(props) {
                         />
                     </div>
                     <div className="form-item">
-                        <InputSetColor 
+                        <InputSetColor
                             label="Shadow Color"
                             value={shadowColor}
-                            onClick={(event) => handleClick(event)}
+                            onClick={(event) => handleClick(event, 'shadow')}
                         />
-                       
+                    </div>
+                    <div className="form-item">
+                        <InputSetColor
+                            label="Background Color"
+                            value={wrapperColor}
+                            onClick={(event) => handleClick(event, 'wrapper')}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <InputSetColor
+                            label="Box Color"
+                            value={boxColor}
+                            onClick={(event) => handleClick(event, 'box')}
+                        />
                     </div>
                 </div>
             </div>
