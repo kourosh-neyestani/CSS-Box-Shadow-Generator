@@ -1,0 +1,29 @@
+/* 
+* Switch
+*/
+.input-switch {
+    width: 80px;
+    height: 40px;
+    position: relative;
+    border-radius: 100px;
+    background-color: #fff;
+    box-shadow: inset 0px 0px 12px 6px #999;
+}
+.input-switch span {
+    top: 0;
+    left: 0;
+    width: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+    padding-top: 50%;
+    border-radius: 50%;
+    background-color: #ccc;
+    box-shadow: inset 0px 0px 12px 6px #999;
+    transition: all 150ms;
+}
+.input-switch.active span {
+    box-shadow: none;
+    background-color: orange;
+    transform: translateX(100%);
+}

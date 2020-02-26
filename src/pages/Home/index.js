@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import InputSwitch from '../../components/InputSwitch';
 import InputSetColor from '../../components/InputSetColor';
 import InputRangeSlider from '../../components/InputRangeSlider';
 import './style.css';
@@ -74,16 +75,21 @@ function Home(props) {
         }
     };
 
-    const handleClick = (event, type) => {
+    const handleClick = (value, type) => {
         switch (type) {
             case "box":
-                setBoxColor(event.hex);
+                setBoxColor(value.hex);
                 break;
             case "shadow":
-                setShadowColor(event.hex);
+                setShadowColor(value.hex);
                 break;
             case "wrapper":
-                setWrapperColor(event.hex);
+                setWrapperColor(value.hex);
+                break;
+            case "inset":
+                setInset(value);
+                console.log(value);
+                alert('worked');
                 break;
             default:
                 return false;
@@ -153,6 +159,13 @@ function Home(props) {
                             label="Box Color"
                             value={boxColor}
                             onClick={(event) => handleClick(event, 'box')}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <InputSwitch
+                            label="Inset"
+                            value={inset}
+                            onClick={() => { setInset(!inset) }}
                         />
                     </div>
                 </div>
