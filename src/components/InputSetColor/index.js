@@ -18,7 +18,7 @@ function InputSetColor(props) {
             <label>{label}</label>
             <div className={["input-color-picker", show && "active"].join(" ")}>
                 <button type="button" style={style} onClick={() => handleClick(true)}>  
-                    <span>Click</span>
+                    <span></span>
                 </button>
                 <input type="text" placeholder={value} />
                 <div className="color-picker">

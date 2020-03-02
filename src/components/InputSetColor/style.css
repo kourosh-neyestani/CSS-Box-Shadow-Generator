@@ -1,5 +1,23 @@
 .input-color-picker {
+    height: 45px;
+    display: block;
     position: relative;
+}
+.input-color-picker input {
+    width: 75px;
+    height: 25px;
+    border: 0;
+    outline: 0;
+    padding: 3px;
+    text-align: center;
+}
+.input-color-picker button {
+    width: 75px;
+    height: 25px;
+    float: left;
+    border: 0;
+    outline: 0;
+    background-color: orange;
 }
 .input-color-picker .color-picker {
     left: 0;
