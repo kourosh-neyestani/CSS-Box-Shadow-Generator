@@ -2,7 +2,7 @@
 
 ...
 
-[Visit http://repo.afracode.com/shadow-generator/](http://repo.afracode.com/shadow-generator/)
+Visit [http://repo.afracode.com/shadow-generator](http://repo.afracode.com/shadow-generator/)
 
 ## Quick start
 
