@@ -1,6 +1,6 @@
 # CSS Box Shadow Generator
 
-A free CSS gradient generator tool, also this website lets you create a colorful gradient background animation.
+...
 
 [CSS Shadow Generator](http://repo.afracode.com/shadow-generator/)
 
